@@ -1,5 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
+import productReducer from "./feature/pcBuildSlice";
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    products: productReducer,
+  },
 });

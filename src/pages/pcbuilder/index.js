@@ -1,21 +1,29 @@
 import RootLayout from "@/components/layout/RootLayout";
 import PcBuilderCategory from "@/components/ui/pcbuildercategory";
 import React from "react";
+import { useSelector } from "react-redux";
+import Swal from "sweetalert2";
 
-const PcBuilderPage = ({ categories }) => {
-  console.log("pc builder", categories);
+const PcBuilderPage = () => {
+  const { products, totalProduct } = useSelector((state) => state.products);
+
+  console.log(products);
 
   let allCategory;
 
-  if (categories.length === 0) {
+  if (products.length === 0) {
     allCategory = <p>Loading....</p>;
   }
 
-  if (categories.length > 0) {
-    allCategory = categories.map((category) => (
+  if (products.length > 0) {
+    allCategory = products.map((category) => (
       <PcBuilderCategory category={category} key={category._id} />
     ));
   }
+
+  const buildComplete = () => {
+    Swal.fire("Your Build is completed !!!");
+  };
 
   return (
     <div className="flex flex-col items-center">
@@ -23,8 +31,25 @@ const PcBuilderPage = ({ categories }) => {
         {allCategory}
       </div>
       <div>
-        <button className="bg-sky-500 flex  text-white font-Poppins font-bold px-8 py-2 rounded-lg lg:-mt-[40px]">
+        {/* <button
+          disabled={totalProduct < 5}
+          className={`${
+            totalProduct >= 5
+          } ? bg-blue-600 flex  text-white font-Poppins font-bold px-8 py-2 rounded-lg lg:-mt-[40px] : "bg-gray-600" `}
+        >
           Complete Build{" "}
+        </button> */}
+
+        <button
+          onClick={() => buildComplete()}
+          disabled={totalProduct < 5}
+          className={`${
+            totalProduct < 5
+              ? " text-black border-gray-500 border"
+              : "bg-blue-600 text-white"
+          } flex  font-Poppins font-bold px-8 py-2 rounded-lg lg:-mt-[40px]`}
+        >
+          Complete Build
         </button>
       </div>
     </div>
@@ -35,15 +60,4 @@ export default PcBuilderPage;
 
 PcBuilderPage.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>;
-};
-
-export const getServerSideProps = async () => {
-  const res = await fetch("http://localhost:7000/categories");
-  const data = await res.json();
-
-  return {
-    props: {
-      categories: data.data,
-    },
-  };
 };

@@ -1,10 +1,22 @@
 import Image from "next/image";
 import React from "react";
 import RootLayout from "../layout/RootLayout";
+import { useDispatch } from "react-redux";
+import { useRouter } from "next/router";
+import { addToBuilder } from "@/redux/feature/pcBuildSlice";
 
 const PcBuilderProduct = ({ product }) => {
+  const dispatch = useDispatch();
+
+  const router = useRouter();
+
+  const handleAddBuildProduct = (product) => {
+    dispatch(addToBuilder({ category: product.category, product }));
+    router.push("/pcbuilder");
+  };
+
   return (
-    <div className="mt-10 flex justify-between items-center p-10 bg-sky-200 rounded-md gap-[20px] shadow-md">
+    <div className="mt-10 flex justify-between items-center p-10 bg-white rounded-md gap-[20px] shadow-md">
       <div className="flex items-start gap-[25px]">
         <div>
           <Image
@@ -31,7 +43,10 @@ const PcBuilderProduct = ({ product }) => {
       </div>
       <div className="flex flex-col items-center gap-[10px]">
         <p className="font-bold text-3xl">${product?.price}</p>
-        <button className="bg-blue-500 font-bold text-white px-12 py-3">
+        <button
+          onClick={() => handleAddBuildProduct(product)}
+          className="bg-blue-500 font-bold text-white px-12 py-3"
+        >
           Add
         </button>
       </div>
@@ -40,5 +55,3 @@ const PcBuilderProduct = ({ product }) => {
 };
 
 export default PcBuilderProduct;
-
-

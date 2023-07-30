@@ -1,4 +1,5 @@
 import RootLayout from "@/components/layout/RootLayout";
+import Banner from "@/components/ui/banner";
 import FeaturedCategory from "@/components/ui/featuredcategory";
 import Marque from "@/components/ui/marquee";
 import ProductCard from "@/components/ui/productcard";
@@ -42,7 +43,7 @@ const HomePage = ({ products, categories }) => {
 
       {/* Featured Products */}
       <div>
-        <div className="flex flex-col justify-center items-center gap-[5px] my-[50px]">
+        <div className="flex flex-col justify-center items-center gap-[5px] my-[20px]">
           <h1 className="text-6xl font-Poppins font-bold">Featured Products</h1>
           <p className="text=md">Check & Get Your Desired Product!</p>
         </div>
@@ -50,8 +51,7 @@ const HomePage = ({ products, categories }) => {
           {allRandomProduct}
         </div>
       </div>
-
-      <hr className="border border-gray-200" />
+      <Banner />
 
       {/* Featured Category */}
       <div className="flex flex-col justify-center items-center gap-[5px] my-[50px]">
