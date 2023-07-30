@@ -80,8 +80,8 @@ HomePage.getLayout = function getLayout(page) {
 };
 
 export const getStaticProps = async () => {
-  const res = await fetch("http://localhost:7000/random-product");
-  const response = await fetch("http://localhost:7000/categories");
+  const res = await fetch("https://starlinkserver.vercel.app/random-product");
+  const response = await fetch("https://starlinkserver.vercel.app/categories");
 
   const data = await res.json();
   const category = await response.json();

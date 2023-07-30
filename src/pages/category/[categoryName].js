@@ -31,7 +31,7 @@ CategoryWiseProduct.getLayout = function getLayout(page) {
 };
 
 export const getStaticPaths = async () => {
-  const res = await fetch("http://localhost:7000/categories");
+  const res = await fetch("https://starlinkserver.vercel.app/categories");
   const categories = await res.json();
   console.log(categories);
   const paths = categories?.data?.map((category) => ({
@@ -44,7 +44,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
   const { params } = context;
   const res = await fetch(
-    `http://localhost:7000/category?search=${params.categoryName}`
+    `https://starlinkserver.vercel.app/category?search=${params.categoryName}`
   );
   const data = await res.json();
 

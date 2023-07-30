@@ -78,7 +78,7 @@ ProductDetailsPage.getLayout = function getLayout(page) {
 };
 
 export const getStaticPaths = async () => {
-  const res = await fetch("http://localhost:7000/products");
+  const res = await fetch("https://starlinkserver.vercel.app/products");
   const products = await res.json();
   const paths = products?.data?.map((product) => ({
     params: { productId: product._id },
@@ -89,7 +89,9 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const { params } = context;
-  const res = await fetch(`http://localhost:7000/product/${params.productId}`);
+  const res = await fetch(
+    `https://starlinkserver.vercel.app/product/${params.productId}`
+  );
   const data = await res.json();
 
   return {

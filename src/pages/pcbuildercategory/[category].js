@@ -33,7 +33,9 @@ export const getServerSideProps = async (context) => {
 
   const category = params.category;
 
-  const res = await fetch(`http://localhost:7000/category?search=${category}`);
+  const res = await fetch(
+    `https://starlinkserver.vercel.app/category?search=${category}`
+  );
   const data = await res.json();
 
   return {

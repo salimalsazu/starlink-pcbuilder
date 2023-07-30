@@ -4,14 +4,10 @@ import Lottie from "lottie-react";
 import reader from "../../Assets/login/login.json";
 import { useForm } from "react-hook-form";
 import { signIn } from "next-auth/react";
+import Link from "next/link";
 
 const Login = () => {
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit } = useForm();
 
   const handleLogin = (data) => console.log(data);
 
@@ -82,7 +78,7 @@ const Login = () => {
                 className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 dark:border-gray-400 focus:ring-violet-400 mt-5"
                 onClick={() =>
                   signIn("google", {
-                    callbackUrl: "http://localhost:3000",
+                    callbackUrl: "https://starlink-mu.vercel.app",
                   })
                 }
               >
@@ -97,14 +93,14 @@ const Login = () => {
               </button>
             </div>
             <p className="px-6 text-sm text-center dark:text-gray-400">
-              Don't have an account yet?
-              <a
+              Dont have an account yet?
+              <Link
                 rel="noopener noreferrer"
-                href="#"
-                className="hover:underline dark:text-violet-400"
+                href="/auth/registration"
+                className="hover:underline dark:text-violet-400 ml-3 text-blue-500"
               >
                 Sign up
-              </a>
+              </Link>
               .
             </p>
           </div>

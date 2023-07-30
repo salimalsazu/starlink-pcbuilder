@@ -10,6 +10,7 @@ import {
   useAuthState,
   useCreateUserWithEmailAndPassword,
 } from "react-firebase-hooks/auth";
+import Link from "next/link";
 
 const registration = () => {
   const [createUserWithEmailAndPassword, loading, error] =
@@ -88,7 +89,7 @@ const registration = () => {
               <button
                 onClick={() =>
                   signIn("google", {
-                    callbackUrl: "http://localhost:3000",
+                    callbackUrl: "https://starlink-mu.vercel.app",
                   })
                 }
                 aria-label="Login with Google"
@@ -107,9 +108,13 @@ const registration = () => {
             </div>
             <p className="px-6 text-sm text-center ">
               Already have an account?
-              <a rel="noopener noreferrer" href="#" className="hover:underline">
+              <Link
+                href="/auth/login"
+                rel="noopener noreferrer"
+                className="hover:underline ml-3 text-blue-600"
+              >
                 Login
-              </a>
+              </Link>
               .
             </p>
           </div>
