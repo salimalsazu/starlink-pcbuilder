@@ -6,8 +6,8 @@ import React from "react";
 const ProductCard = ({ product }) => {
   return (
     <Link href={`/details/${product._id}`}>
-      <div className="mt-10">
-        <div className="card w-96 bg-base-100 shadow-lg slide-top">
+      <div className="mt-10 w-full ">
+        <div className="card m-2 bg-base-100 shadow-lg slide-top">
           <figure>
             <Image
               width={400}

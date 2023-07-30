@@ -1,6 +1,7 @@
 import RootLayout from "@/components/layout/RootLayout";
 import Banner from "@/components/ui/banner";
 import FeaturedCategory from "@/components/ui/featuredcategory";
+import Hero from "@/components/ui/hero";
 import Marque from "@/components/ui/marquee";
 import ProductCard from "@/components/ui/productcard";
 import React from "react";
@@ -36,6 +37,7 @@ const HomePage = ({ products, categories }) => {
 
   return (
     <div className="">
+      {/* <Hero /> */}
       {/* Marquee Slider Notice */}
       <div>
         <Marque />
@@ -43,11 +45,13 @@ const HomePage = ({ products, categories }) => {
 
       {/* Featured Products */}
       <div>
-        <div className="flex flex-col justify-center items-center gap-[5px] my-[20px]">
-          <h1 className="text-6xl font-Poppins font-bold">Featured Products</h1>
+        <div className="flex flex-col justify-center items-center gap-[5px] my-[40px] w-auto">
+          <h1 className="lg:text-6xl text-3xl font-Poppins font-bold">
+            Featured Products
+          </h1>
           <p className="text=md">Check & Get Your Desired Product!</p>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-3 justify-center items-center w-[1170px] mx-auto my-[100px] gap-[25px]">
+        <div className="grid grid-cols-1 lg:grid-cols-3 justify-center items-center lg:w-[1170px] mx-auto my-[100px] lg:gap-[5px]">
           {allRandomProduct}
         </div>
       </div>
@@ -55,11 +59,13 @@ const HomePage = ({ products, categories }) => {
 
       {/* Featured Category */}
       <div className="flex flex-col justify-center items-center gap-[5px] my-[50px]">
-        <h1 className="text-6xl font-Poppins font-bold">Featured Category</h1>
-        <p className="text=md">
+        <h1 className="lg:text-6xl text-3xl font-Poppins font-bold">
+          Featured Category
+        </h1>
+        <p className="text-md">
           Get Your Desired Product from Featured Categor
         </p>
-        <div className="flex flex-col items-center lg:flex-row gap-[30px] my-[40px]">
+        <div className="grid grid-cols-2 lg:grid-cols-6 items-center lg:flex-row gap-[30px] my-[40px]">
           {allCategory}
         </div>
       </div>

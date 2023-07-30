@@ -6,9 +6,6 @@ import { useForm } from "react-hook-form";
 import { signIn } from "next-auth/react";
 
 const Login = () => {
-
-
-    
   const {
     register,
     handleSubmit,
@@ -19,8 +16,8 @@ const Login = () => {
   const handleLogin = (data) => console.log(data);
 
   return (
-    <div className="flex items-center flex-row-reverse w-[1170px] mx-auto">
-      <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 justify-center items-center w-[1170px] mx-auto ">
+    <div className="flex items-center flex-col lg:flex-row-reverse lg:w-[1170px] lg:mx-auto">
+      <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 justify-center items-center lg:w-[1170px] lg:mx-auto ">
         <div className="mb-8 text-center">
           <h1 className="my-3 text-4xl font-bold">Sign in</h1>
           <p className="text-sm dark:text-gray-400">

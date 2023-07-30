@@ -45,9 +45,43 @@ const Navbar = () => {
                   ))}
                 </ul>
               </li>
-              <Link href={"/auth/login"}>Login</Link>
+              {!seassion && (
+                <li>
+                  <Link href={"/auth/login"}>Login</Link>
+                </li>
+              )}
+              {!seassion && (
+                <li>
+                  <Link href={"/auth/registration"}>Registration</Link>
+                </li>
+              )}
+
+              <div className="mt-5 mb-5">
+                <Link
+                  href={"/pcbuilder"}
+                  className="px-4 py-2 bg-blue-500 text-white rounded-md shadow-md "
+                >
+                  PC Builder
+                </Link>
+              </div>
+
+              <div>{seassion && <h1>{seassion?.user.name}</h1>}</div>
+
+              <div>
+                {seassion && (
+                  <button
+                    onClick={() => signOut()}
+                    type="primary"
+                    danger
+                    className="bg-red-500 text-white rounded-full px-3 py-1 w-[100px] my-5"
+                  >
+                    Logout
+                  </button>
+                )}
+              </div>
             </ul>
           </div>
+
           <Link href={"/"} className="text-4xl  font-extrabold font-Tektur ">
             StarLink.
           </Link>
@@ -68,6 +102,7 @@ const Navbar = () => {
                 </ul>
               </details>
             </li>
+
             {!seassion && (
               <li>
                 <Link href={"/auth/login"}>Login</Link>
@@ -89,15 +124,32 @@ const Navbar = () => {
             PC Builder
           </Link>
         </div>
-        <div>{seassion && <h1>{seassion?.user.name}</h1>}</div>
 
-        <div>
-          {seassion && (
-            <button onClick={() => signOut()} type="primary" danger>
-              Logout
-            </button>
-          )}
-        </div>
+        {seassion && (
+          <div className="dropdown dropdown-bottom dropdown-end ml-5">
+            <label tabIndex={0} className="btn">
+              Profile
+            </label>
+            <ul
+              tabIndex={0}
+              className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <li>
+                <a>{seassion && <h1>{seassion?.user.name}</h1>}</a>
+              </li>
+              <li>
+                <a>
+                  {" "}
+                  {seassion && (
+                    <button onClick={() => signOut()} type="primary" danger>
+                      Logout
+                    </button>
+                  )}
+                </a>
+              </li>
+            </ul>
+          </div>
+        )}
       </div>
     </div>
   );

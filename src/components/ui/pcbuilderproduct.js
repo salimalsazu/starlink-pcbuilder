@@ -16,7 +16,7 @@ const PcBuilderProduct = ({ product }) => {
   };
 
   return (
-    <div className="mt-10 flex justify-between items-center p-10 bg-white rounded-md gap-[20px] shadow-md">
+    <div className="mt-10 flex flex-col lg:flex-row justify-center lg:justify-between items-center p-10 bg-white rounded-md gap-[20px] shadow-md">
       <div className="flex items-start gap-[25px]">
         <div>
           <Image
