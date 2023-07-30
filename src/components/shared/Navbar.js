@@ -1,9 +1,12 @@
 import React from "react";
 import { useSession, signOut } from "next-auth/react";
 import Link from "next/link";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const { data: seassion } = useSession();
+
+  const { products } = useSelector((state) => state.products);
 
   return (
     <div className="bg-lime-100 rounded-sm sticky top-0 z-50">
@@ -33,27 +36,13 @@ const Navbar = () => {
               <li>
                 <a>Categories</a>
                 <ul className="p-2">
-                  <li>
-                    <a>CPU / Processor</a>
-                  </li>
-                  <li>
-                    <a>Motherboard</a>
-                  </li>
-                  <li>
-                    <a>RAM</a>
-                  </li>
-                  <li>
-                    <a>Power Supply Unit</a>
-                  </li>
-                  <li>
-                    <a>Storage Device</a>
-                  </li>
-                  <li>
-                    <a>Monitor</a>
-                  </li>
-                  <li>
-                    <a>Others</a>
-                  </li>
+                  {products?.map((category) => (
+                    <li key={Math.random()}>
+                      <Link href={`/category/${category.category}`}>
+                        {category.category}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </li>
               <Link href={"/auth/login"}>Login</Link>
@@ -69,27 +58,13 @@ const Navbar = () => {
               <details>
                 <summary>Categories</summary>
                 <ul className="p-2">
-                  <li>
-                    <a>CPU / Processor</a>
-                  </li>
-                  <li>
-                    <a>Motherboard</a>
-                  </li>
-                  <li>
-                    <a>RAM</a>
-                  </li>
-                  <li>
-                    <a>Power Supply Unit</a>
-                  </li>
-                  <li>
-                    <a>Storage Device</a>
-                  </li>
-                  <li>
-                    <a>Monitor</a>
-                  </li>
-                  <li>
-                    <a>Others</a>
-                  </li>
+                  {products?.map((category) => (
+                    <li key={Math.random()}>
+                      <Link href={`/category/${category.category}`}>
+                        {category.category}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </details>
             </li>
