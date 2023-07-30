@@ -37,7 +37,7 @@ const HomePage = ({ products, categories }) => {
 
   return (
     <div className="">
-      {/* <Hero /> */}
+      <Hero />
       {/* Marquee Slider Notice */}
       <div>
         <Marque />

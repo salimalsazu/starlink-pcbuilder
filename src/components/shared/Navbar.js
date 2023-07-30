@@ -109,7 +109,7 @@ const Navbar = () => {
               </li>
             )}
             {!seassion && (
-              <li>
+              <li className="ml-5">
                 <Link href={"/auth/registration"}>Registration</Link>
               </li>
             )}

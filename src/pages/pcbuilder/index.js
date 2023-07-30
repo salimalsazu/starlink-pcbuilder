@@ -31,15 +31,6 @@ const PcBuilderPage = () => {
         {allCategory}
       </div>
       <div>
-        {/* <button
-          disabled={totalProduct < 5}
-          className={`${
-            totalProduct >= 5
-          } ? bg-blue-600 flex  text-white font-Poppins font-bold px-8 py-2 rounded-lg lg:-mt-[40px] : "bg-gray-600" `}
-        >
-          Complete Build{" "}
-        </button> */}
-
         <button
           onClick={() => buildComplete()}
           disabled={totalProduct < 5}

@@ -16,7 +16,7 @@ const Category = ({ products }) => {
   }
 
   return (
-    <div className="grid grid-cols-1  justify-center items-center w-[1170px] mx-auto my-[100px] gap-[25px]">
+    <div className="grid grid-cols-1 justify-center items-center lg:w-[1170px] lg:mx-auto my-[100px] gap-[10px] lg:gap-[25px] m-10 lg:m-0">
       {allRandomProduct}
     </div>
   );
