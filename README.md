@@ -1,6 +1,7 @@
 The Starlink PC Builder Website is an online platform that allows users to build their custom PCs using a wide range of components and products. It combines the power of Next.js, a popular React framework for server-side rendering, with Redux for state management, providing a seamless and efficient user experience. 
 
 Live Link: https://starlink-mu.vercel.app/ 
+Git hub Link: https://github.com/salimalsazu/starlink-pcbuilder
 
 Features:
 
