@@ -18,8 +18,15 @@ const PcBuilderPage = ({ categories }) => {
   }
 
   return (
-    <div className="flex flex-col items-center gap-[20px] w-[1170px] mx-auto p-20">
-      {allCategory}
+    <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center gap-2 lg:gap-[20px] w-full lg:w-[1170px] lg:mx-auto lg:p-20 p-5">
+        {allCategory}
+      </div>
+      <div>
+        <button className="bg-sky-500 flex  text-white font-Poppins font-bold px-8 py-2 rounded-lg lg:-mt-[40px]">
+          Complete Build{" "}
+        </button>
+      </div>
     </div>
   );
 };
