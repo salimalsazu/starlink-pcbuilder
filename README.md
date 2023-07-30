@@ -23,32 +23,38 @@ To run the Starlink PC Builder Website project on your local machine, follow the
 
 Prerequisites:
 
-Ensure you have Node.js and npm (Node Package Manager) installed on your machine. You can download them from the official Node.js website: https://nodejs.org/  <br/>
+Ensure you have Node.js and npm (Node Package Manager) installed on your machine. You can download them from the official Node.js website: https://nodejs.org/  
+<br/>
 Step 1: Clone the Repository
 
 bash <br/>
 Copy code <br/>
-git clone <repository_url>
-Step 2: Install Dependencies
+git clone <repository_url> <br/>
+Step 2: Install Dependencies <br/>
 Navigate to the project folder and install the required dependencies using npm:
 
 <br/>
-bash
-Copy code
-cd starlink-pcbuilder
+bash  <br/>
+Copy code <br/>
+cd starlink-pcbuilder <br/>
 npm install  <br/>
+
 Step 3: Set Environment Variables
 Create a .env.local file in the root directory and set the necessary environment variables. For example, you might need to set API keys or database connection strings. Be sure to check the documentation for any specific requirements.
 
+<br/>
 Step 4: Start the Development Server
 Run the following command to start the development server:
 
-arduino 
+<br/> 
 Copy code
 npm run dev <br/>
-Step 5: Access the Website
+<br/>
+
+Step 5: Access the Website <br/>
 Once the development server is up and running, open your web browser and navigate to http://localhost:3000/ to access the Starlink PC Builder Website.
 
+<br/>
 Step 6: Start Building PCs!
 You can now explore the product catalog, add components to your PC builds using the PC builder tool, and experience the features of the Starlink PC Builder Website.
 
